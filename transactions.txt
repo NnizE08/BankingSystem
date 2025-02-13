@@ -1,0 +1,28 @@
+[2025-02-13 11:14:44] Account Created: fad63765-b008-4938-9ec6-e9a7b19fe0ff | Type: SAVINGS | Balance: $500.0
+[2025-02-13 11:14:44] Account Created: 32364c3f-9b79-48d3-a489-6fc271cf9c29 | Type: CHECKING | Balance: $300.0
+[2025-02-13 11:14:44] Account: fad63765-b008-4938-9ec6-e9a7b19fe0ff | Type: Deposit | Amount: $200.00 | Balance: $700.00
+[2025-02-13 11:14:44] Account: 32364c3f-9b79-48d3-a489-6fc271cf9c29 | Type: Deposit | Amount: $150.00 | Balance: $450.00
+[2025-02-13 11:14:44] Account: fad63765-b008-4938-9ec6-e9a7b19fe0ff | Type: Transfer Out | Amount: $50.00 | Balance: $550.00
+[2025-02-13 11:14:44] Account: 32364c3f-9b79-48d3-a489-6fc271cf9c29 | Type: Transfer In | Amount: $50.00 | Balance: $0.00
+[2025-02-13 11:18:48] Account Created: 7cfd4c07-49bf-45ac-b27f-64cff4e3752d | Type: SAVINGS | Balance: $200.0
+[2025-02-13 11:18:48] Account Created: be644a4c-077a-41d1-9f4c-a6e911236454 | Type: CHECKING | Balance: $500.0
+[2025-02-13 11:18:48] Account: 7cfd4c07-49bf-45ac-b27f-64cff4e3752d | Type: Deposit | Amount: $150.00 | Balance: $350.00
+[2025-02-13 11:18:48] Account: be644a4c-077a-41d1-9f4c-a6e911236454 | Type: Deposit | Amount: $200.00 | Balance: $700.00
+[2025-02-13 13:44:25] Account: Account# 682663 | Type: Transfer Out | Amount: $50.00 | Balance: $550.00
+[2025-02-13 13:44:25] Account: Account# 295634 | Type: Transfer In | Amount: $50.00 | Balance: $450.00
+[2025-02-13 14:03:51] Account Created: Account# 630358 | Type: SAVINGS | Balance: 500.0
+[2025-02-13 14:03:51] Account Created: Account# 493905 | Type: CHECKING | Balance: 300.0
+[2025-02-13 14:03:51] Account: Account# 630358 | Type: Deposit | Amount: $200.00 | Balance: $700.00
+[2025-02-13 14:03:51] Account: Account# 493905 | Type: Deposit | Amount: $100.00 | Balance: $400.00
+[2025-02-13 14:03:51] Account: Account# 630358 | Type: Withdrawal | Amount: $150.00 | Balance: $550.00
+[2025-02-13 14:03:51] Account: Account# 493905 | Type: Withdrawal | Amount: $350.00 | Balance: $50.00
+[2025-02-13 14:03:51] Account: Account# 630358 | Type: Transfer Out | Amount: $100.00 | Balance: $450.00
+[2025-02-13 14:03:51] Account: Account# 493905 | Type: Transfer In | Amount: $100.00 | Balance: $150.00
+[2025-02-13 14:06:43] Account Created: Account# 628975 | Type: SAVINGS | Balance: 500.0
+[2025-02-13 14:06:43] Account Created: Account# 553006 | Type: CHECKING | Balance: 300.0
+[2025-02-13 14:06:43] Account: Account# 628975 | Type: Deposit | Amount: $200.00 | Balance: $700.00
+[2025-02-13 14:06:43] Account: Account# 553006 | Type: Deposit | Amount: $100.00 | Balance: $400.00
+[2025-02-13 14:06:43] Account: Account# 628975 | Type: Withdrawal | Amount: $150.00 | Balance: $550.00
+[2025-02-13 14:06:43] Account: Account# 553006 | Type: Withdrawal | Amount: $350.00 | Balance: $50.00
+[2025-02-13 14:06:43] Account: Account# 628975 | Type: Transfer Out | Amount: $100.00 | Balance: $450.00
+[2025-02-13 14:06:43] Account: Account# 553006 | Type: Transfer In | Amount: $100.00 | Balance: $150.00

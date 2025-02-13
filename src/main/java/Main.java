@@ -5,33 +5,27 @@ public class Main {
 	public static void main(String[] args) {
 		AccountService accountService = new AccountService();
 
-		// Create Accounts
-		Account savings = accountService.createAccount(AccountType.SAVINGS, 200, 0); // Savings Account
-		Account checking = accountService.createAccount(AccountType.CHECKING, 500, 100); // Checking Account
+		// Create accounts
+		Account savings = accountService.createAccount(AccountType.SAVINGS, 500, 0);
+		Account checking = accountService.createAccount(AccountType.CHECKING, 300, 200);
 
-		System.out.println("\n--- Initial Balances ---");
-		System.out.println("Savings Balance: " + savings.getBalance());
-		System.out.println("Checking Balance: " + checking.getBalance());
+		// Display account info
+		System.out.println("Created Savings Account: " + savings.getAccountNumber() + " | Balance: $" + savings.getBalance());
+		System.out.println("Created Checking Account: " + checking.getAccountNumber() + " | Balance: $" + checking.getBalance());
 
-		// Test Deposits
-		System.out.println("\n--- Depositing Money ---");
-		accountService.deposit(savings, 150);
-		accountService.deposit(checking, 200);
+		// Deposit funds
+		accountService.deposit(savings, 200);
+		accountService.deposit(checking, 100);
 
-		// Test Withdrawals
-		System.out.println("\n--- Withdrawing Money ---");
-		accountService.withdraw(savings, 50);
-		accountService.withdraw(checking, 700); // Should fail due to overdraft limit?
-		accountService.withdraw(checking, 50);
+		// Withdraw funds
+		accountService.withdraw(savings, 150);
+		accountService.withdraw(checking, 350); // Should test overdraft
 
-		// Test Transfers
-		System.out.println("\n--- Transferring Money ---");
-		accountService.transfer(checking, savings, 100);
-		accountService.transfer(savings, checking, 500); // Should fail due to insufficient funds!
+		// Transfer funds
+		accountService.transfer(savings, checking, 100);
 
-		// Final Balances
-		System.out.println("\n--- Final Balances ---");
-		System.out.println("Savings Balance: " + savings.getBalance());
-		System.out.println("Checking Balance: " + checking.getBalance());
+		// Display final balances
+		System.out.println("Final Savings Balance: $" + savings.getBalance());
+		System.out.println("Final Checking Balance: $" + checking.getBalance());
 	}
 }

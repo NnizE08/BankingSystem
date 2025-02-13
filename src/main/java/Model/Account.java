@@ -2,8 +2,12 @@ package Model;
 
 public interface Account {
 	void deposit(double amount);
-	boolean withdraw(double amount);
-	void displayAccountInfo();
-	String getAccountNumber();
+
+	void withdraw(double amount);
+
 	double getBalance();
+
+	String getAccountNumber();
+
+
 }
