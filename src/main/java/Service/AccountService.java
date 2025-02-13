@@ -43,43 +43,45 @@ public class AccountService {
 	}
 
 	public void deposit(Account account, double amount) {
-		if (amount <= 0) {
-			throw new IllegalArgumentException("Deposit amount must be greater than zero");
+		try {
+			AccountUtils.validateDeposit(amount);
+			account.deposit(amount);
+			System.out.println("Deposited " + amount);
+			TransactionLogger.logTransaction(account.getAccountNumber(), "Deposit", amount, account.getBalance());
+		} catch (InvalidAmountException e) {
+			System.out.println(e.getMessage());
 		}
-		account.deposit(amount);
-		System.out.println("Deposited: " + amount);
-		TransactionLogger.logTransaction(account.getAccountNumber(), "Deposit", amount, account.getBalance());
 	}
 
+
 	public void withdraw(Account account, double amount) {
-		if (amount <= 0) {
-			throw new IllegalArgumentException("Withrawal amount must be greater than zero");
+		try {
+			AccountUtils.validateWithdrawal(account, amount);
+			account.withdraw(amount);
+			System.out.println("Withdrawn: " + amount);
+			TransactionLogger.logTransaction(account.getAccountNumber(), "Withdrawal", amount, account.getBalance());
+		} catch (InvalidAmountException | InsufficientFundsException e) {
+			System.out.println(e.getMessage());
 		}
-		account.withdraw(amount);
-		System.out.println("Withrawn: " + amount);
-		TransactionLogger.logTransaction(account.getAccountNumber(), "Withdrawal", amount, account.getBalance());
 	}
 
 	public void transfer(Account from, Account to, double amount) {
-		if (amount <= 0) {
-			throw new InvalidAmountException("Transfer amount must be greater than zero");
+		try {
+			AccountUtils.validateTransfer(from, to, amount);
+			from.withdraw(amount);
+			to.deposit(amount);
+			System.out.println("Transferred " + amount + " successfully");
+			TransactionLogger.logTransaction(from.getAccountNumber(), "Transfer Out", amount, from.getBalance());
+			TransactionLogger.logTransaction(to.getAccountNumber(), "Transfer In", amount, to.getBalance());
+		} catch (InvalidAmountException | InsufficientFundsException e) {
+			System.out.println(e.getMessage());
 		}
-		if (from.getBalance() < amount) {
-			throw new InsufficientFundsException("Transfer failed: Insufficient funds");
-		}
-
-		from.withdraw(amount);
-		to.deposit(amount);
-
-		System.out.println("Transferred " + amount + " successfully");
-		TransactionLogger.logTransaction(from.getAccountNumber(), "Transfer Out", amount, from.getBalance());
-		TransactionLogger.logTransaction(to.getAccountNumber(), "Transfer In", amount, to.getBalance());
 	}
+
 	private void logAccountCreation(Account account, AccountType type) { //logs here
 		String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 		String formattedBalance = AccountUtils.formatBalance(account.getBalance());
-		String logEntry = "[" + timestamp + "] Account Created: " + account.getAccountNumber() +
-				" | Type: " + type + " | Balance: " + account.getBalance();
+		String logEntry = "[" + timestamp + "] Account Created: " + account.getAccountNumber() + " | Type: " + type + " | Balance: " + account.getBalance();
 		TransactionLogger.logCustom(logEntry);
 	}
 }

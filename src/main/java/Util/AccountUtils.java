@@ -23,25 +23,25 @@ public class AccountUtils {
 	}
 	public static void validateDeposit(double amount) throws InvalidAmountException {
 		if (amount <= 0) {
-			throw new InvalidAmountException("Deposit amount must be greater than zero.");
+			throw new InvalidAmountException("Deposit amount must be greater than zero");
 		}
 	}
 
 	public static void validateWithdrawal(Account account, double amount) throws InvalidAmountException, InsufficientFundsException {
 		if (amount <= 0) {
-			throw new InvalidAmountException("Withdrawal amount must be greater than zero.");
+			throw new InvalidAmountException("Withdrawal amount must be greater than zero");
 		}
 		if (account.getBalance() < amount) {
-			throw new InsufficientFundsException("Insufficient funds for withdrawal.");
+			throw new InsufficientFundsException("Insufficient funds for withdrawal");
 		}
 	}
 
 	public static void validateTransfer(Account from, Account to, double amount) throws InvalidAmountException, InsufficientFundsException {
 		if (amount <= 0) {
-			throw new InvalidAmountException("Transfer amount must be greater than zero.");
+			throw new InvalidAmountException("Transfer amount must be greater than zero");
 		}
 		if (from.getBalance() < amount) {
-			throw new InsufficientFundsException("Transfer failed: Insufficient funds.");
+			throw new InsufficientFundsException("Transfer failed: Insufficient funds");
 		}
 	}
 }
